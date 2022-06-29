@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/mainBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:padding="@dimen/space_5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_72"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_56"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_explore_24"
+            android:gravity="center"
+            android:text="广场" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_56"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_explore_24"
+            android:gravity="center"
+            android:text="公众号" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_56"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_explore_24"
+            android:gravity="center"
+            android:text="体系" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_56"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_explore_24"
+            android:gravity="center"
+            android:text="项目" />
+    </LinearLayout>
+
+</LinearLayout>

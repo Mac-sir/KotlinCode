@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_8"
+    android:padding="@dimen/dp_8">
+
+    <ImageView
+        android:id="@+id/mainHeadImg"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/margin_5dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/mainAuthorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/mainHeadImg"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:layout_toStartOf="@+id/mainLikeImg"
+        android:layout_toEndOf="@id/mainHeadImg"
+        android:gravity="bottom"
+        android:text="author"
+        android:textColor="@android:color/secondary_text_light" />
+
+    <TextView
+        android:id="@+id/mainDateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/mainHeadImg"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:paddingEnd="@dimen/space_10dp"
+        android:text="日期"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/mainTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainHeadImg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/space_10dp"
+        android:paddingBottom="@dimen/space_5dp"
+        android:text="标题"
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <TextView
+        android:id="@+id/mainTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/mainLikeImg"
+        android:layout_alignBottom="@id/mainLikeImg"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/mainLikeImg"
+        android:gravity="center_vertical"
+        android:text="类型"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="@dimen/text_size_16sp" />
+
+    <ImageView
+        android:id="@+id/mainLikeImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTitleTv"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/space_10dp"
+        android:src="@drawable/ic_action_no_like" />
+</RelativeLayout>
