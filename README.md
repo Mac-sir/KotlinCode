@@ -1,6 +1,6 @@
 # KotlinCode
 
-趁着学习的Kotlin的机会，做个小demo巩固一下
+趁着学习Kotlin的机会，做个小demo巩固一下
 
 ## 成长
 - 学会了MVP的使用
