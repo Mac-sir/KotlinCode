@@ -46,8 +46,8 @@
 - 学习kotlin
 
 ## 感谢-开源作者
-[WanAndroid](https://www.wanandroid.com/)
-[banner](https://github.com/youth5201314/banner)
-[glide](https://github.com/bumptech/glide)
-[retrofit](https://github.com/square/retrofit)
+[WanAndroid](https://www.wanandroid.com/)  
+[banner](https://github.com/youth5201314/banner)  
+[glide](https://github.com/bumptech/glide)  
+[retrofit](https://github.com/square/retrofit)  
 [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
