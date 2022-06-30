@@ -11,13 +11,7 @@ interface MainPresenter {
         fun getListFailed(error: String)
     }
 
-    interface OnTreeListListener {
-        fun getTreeList()
 
-        fun getTreeSuccess(treeListData: TreeListData)
-
-        fun getTreeFailed(error: String)
-    }
 
     interface OnFriendListener {
         fun getFriendList()
@@ -30,7 +24,7 @@ interface MainPresenter {
     interface OnCollectArticleListener{
         fun collectArticle(id:Int,isAdd:Boolean)
 
-        fun collectArticleSuccess(result: HomeListData, isAdd: Boolean)
+        fun collectArticleSuccess(result: BaseData, isAdd: Boolean)
 
         fun collectArticleFailed(errorMessage: String?, isAdd: Boolean)
     }

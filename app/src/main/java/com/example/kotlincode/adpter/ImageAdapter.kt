@@ -1,4 +1,4 @@
-package com.example.kotlincode.activity.main
+package com.example.kotlincode.adpter
 
 import android.content.Context
 import com.bumptech.glide.Glide

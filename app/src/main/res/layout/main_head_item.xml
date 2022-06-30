@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -17,36 +18,40 @@
         android:padding="@dimen/space_5dp">
 
         <TextView
+            android:id="@+id/tvSquare"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_56"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_baseline_explore_24"
             android:gravity="center"
-            android:text="广场" />
+            android:text="@string/square_name"
+            app:drawableTopCompat="@drawable/ic_baseline_explore_24" />
 
         <TextView
+            android:id="@+id/tvOfficialAccount"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_56"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_baseline_explore_24"
             android:gravity="center"
-            android:text="公众号" />
+            android:text="@string/official_name"
+            app:drawableTopCompat="@drawable/ic_baseline_explore_24" />
 
         <TextView
+            android:id="@+id/tvSystem"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_56"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_baseline_explore_24"
             android:gravity="center"
-            android:text="体系" />
+            android:text="@string/system_name"
+            app:drawableTopCompat="@drawable/ic_baseline_explore_24" />
 
         <TextView
+            android:id="@+id/tvProject"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_56"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_baseline_explore_24"
             android:gravity="center"
-            android:text="项目" />
+            android:text="@string/project_name"
+            app:drawableTopCompat="@drawable/ic_baseline_explore_24" />
     </LinearLayout>
 
 </LinearLayout>

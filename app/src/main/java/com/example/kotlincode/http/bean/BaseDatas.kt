@@ -6,6 +6,8 @@ data class BaseDatas(
     var title: String,
     var chapterId: Int,
     var chapterName: String?,
+    var superChapterName: String?,
+    var shareUser: String?,
     var envelopePic: Any,
     var link: String,
     var author: String,

@@ -50,5 +50,5 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'io.github.youth5201314:banner:2.2.2'//轮播图
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'//适配器
-
+    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'//导航
 }

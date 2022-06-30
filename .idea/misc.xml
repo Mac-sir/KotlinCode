@@ -10,20 +10,28 @@
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/ic_action_no_like.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20729166666666668" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/item_round_bg.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/main_head_bg.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/main_head_bg_round.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/drawable/search_bg_bar.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_normal.xml" value="0.12771739130434784" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_official.xml" value="0.1308876811594203" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_project.xml" value="0.1308876811594203" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_splash.xml" value="0.10280797101449275" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_square.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_system.xml" value="0.1308876811594203" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/activity_web.xml" value="0.12771739130434784" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/coordinatorlayout_header.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/fragment_normal.xml" value="0.1308876811594203" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/home_list_item.xml" value="0.19114583333333332" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/main_head_bg_round.xml" value="0.19114583333333332" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/main_head_item.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/main_list_item.xml" value="0.16757246376811594" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/main_list_item.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/system_list_item.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/toolbar_header.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/layout/toolbar_normal.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/KotlinCode/app/src/main/res/xml/scene_header.xml" value="0.19114583333333332" />
       </map>
     </option>

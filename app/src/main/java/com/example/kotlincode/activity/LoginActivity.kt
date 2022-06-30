@@ -7,7 +7,7 @@ import com.example.kotlincode.R
 import com.example.kotlincode.databinding.ActivityLoginBinding
 import com.example.kotlincode.http.bean.LoginData
 import com.example.kotlincode.presenter.LoginPresenterImpl
-import com.example.kotlincode.util.toast
+import com.example.kotlincode.toast
 import com.example.kotlincode.view.LoginView
 
 class LoginActivity : BaseActivity(), LoginView {

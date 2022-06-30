@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/dp_8"
+    android:layout_margin="@dimen/dp_8"
+    android:background="@drawable/item_round_bg"
     android:padding="@dimen/dp_8">
 
     <ImageView
@@ -48,7 +49,7 @@
         android:paddingBottom="@dimen/space_5dp"
         android:text="标题"
         android:textColor="@android:color/primary_text_light"
-        android:textSize="@dimen/text_size_18sp" />
+        android:textSize="@dimen/text_size_16sp" />
 
     <TextView
         android:id="@+id/mainTypeTv"
@@ -58,10 +59,10 @@
         android:layout_alignBottom="@id/mainLikeImg"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/mainLikeImg"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|bottom"
         android:text="类型"
         android:textColor="@android:color/secondary_text_light"
-        android:textSize="@dimen/text_size_16sp" />
+        android:textSize="@dimen/text_size_12sp" />
 
     <ImageView
         android:id="@+id/mainLikeImg"
@@ -69,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/mainTitleTv"
         android:layout_alignParentEnd="true"
-        android:padding="@dimen/space_10dp"
+        android:padding="@dimen/space_5dp"
+        android:visibility="invisible"
         android:src="@drawable/ic_action_no_like" />
 </RelativeLayout>

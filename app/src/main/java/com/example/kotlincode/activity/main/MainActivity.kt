@@ -2,23 +2,26 @@ package com.example.kotlincode.activity.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewbinding.ViewBinding
-import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnLoadMoreListener
 import com.example.kotlincode.R
 import com.example.kotlincode.activity.BaseActivity
-import com.example.kotlincode.activity.PreviewActivity
+import com.example.kotlincode.adpter.ImageAdapter
+import com.example.kotlincode.adpter.CommonAdapter
 import com.example.kotlincode.databinding.ActivityMainBinding
+import com.example.kotlincode.databinding.MainHeadItemBinding
 import com.example.kotlincode.http.bean.BannerData
 import com.example.kotlincode.http.bean.BaseData
 import com.example.kotlincode.http.bean.BaseDatas
 import com.example.kotlincode.presenter.MainPresenterImpl
+import com.example.kotlincode.startAction
+import com.example.kotlincode.startPreview
 import com.example.kotlincode.view.MainView
 import com.youth.banner.Banner
 import com.youth.banner.indicator.CircleIndicator
@@ -36,8 +39,8 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
 
     private var mBannerData = mutableListOf<BannerData>()
 
-    private val mainAdapter: MainAdapter by lazy {
-        MainAdapter(this, mData)
+    private val commonAdapter: CommonAdapter by lazy {
+        CommonAdapter(this, mData)
     }
 
     private val bannerAdapter: ImageAdapter by lazy {
@@ -55,16 +58,21 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
     override fun initView(savedInstanceState: Bundle?) {
         Log.i(tag, "onCreate")
         binding = (mBinding as ActivityMainBinding)
-        binding.swipeRefresh.run {
-            isRefreshing = true
-            setOnRefreshListener(onRefreshListener)
-        }
         mainHead = this.layoutInflater.inflate(R.layout.main_head_item, null) as LinearLayout
         mainBanner = mainHead.findViewById(R.id.mainBanner)
-        binding.recycleView.run {
-            adapter = mainAdapter
+        val mainBinding: MainHeadItemBinding = MainHeadItemBinding.bind(mainHead.rootView)
+        binding.run {
+            swipeRefresh.isRefreshing = true
+            swipeRefresh.setOnRefreshListener(onRefreshListener)
+            recycleView.adapter = commonAdapter
         }
-        mainAdapter.run {
+        mainBinding.run {
+            tvSquare.setOnClickListener(onClickListener)
+            tvOfficialAccount.setOnClickListener(onClickListener)
+            tvProject.setOnClickListener(onClickListener)
+            tvSystem.setOnClickListener(onClickListener)
+        }
+        commonAdapter.run {
             addHeaderView(mainHead)
             loadMoreModule.setOnLoadMoreListener(this@MainActivity)
             setOnItemClickListener(onItemClickListener)
@@ -83,11 +91,26 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
         mainPresenter.getList()
     }
 
-    private val onItemClickListener = OnItemClickListener { adapter, view, position ->
+    private val onItemClickListener = OnItemClickListener { _, _, position ->
         //BaseQuickAdapter3.0.7 OnItemClickListener 点击闪退
-        val intent = Intent(this@MainActivity, PreviewActivity::class.java)
-        intent.data = Uri.parse(mainAdapter.data[position].link)
-        startActivity(intent)
+        startPreview(this@MainActivity, commonAdapter.data[position].link)
+    }
+
+    private val onClickListener = View.OnClickListener {
+        when (it.id) {
+            R.id.tvSquare -> {
+                startActivity(Intent(this@MainActivity, SquareActivity::class.java))
+            }
+            R.id.tvOfficialAccount -> {
+                startAction(this@MainActivity,getString(R.string.official_name))
+            }
+            R.id.tvSystem -> {
+                startActivity(Intent(this@MainActivity, SystemActivity::class.java))
+            }
+            R.id.tvProject -> {
+                startAction(this@MainActivity,getString(R.string.project_name))
+            }
+        }
     }
 
     override fun onStart() {
@@ -136,7 +159,7 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
         data.datas?.let {
             val all = data.total
             val isRefresh = binding.swipeRefresh.isRefreshing
-            mainAdapter.run {
+            commonAdapter.run {
                 if (data.offset >= all || data.size >= all) {
                     return
                 }
@@ -157,7 +180,7 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
     }
 
     override fun onLoadMore() {
-        val page = mainAdapter.data.size / 20 + 1
+        val page = commonAdapter.data.size / 20 + 1
         mainPresenter.getList(page)
     }
 }

@@ -7,7 +7,7 @@ import com.example.kotlincode.Constant
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class SPUtil<T>(private val name: String, val defaultValue: T) : ReadWriteProperty<Any?, T> {
+class SPUtil<T>(private val name: String,private val defaultValue: T) : ReadWriteProperty<Any?, T> {
 
     companion object {
         lateinit var spUtil: SharedPreferences

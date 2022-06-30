@@ -23,4 +23,6 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+    <style name="Theme.KotlinCode.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.KotlinCode.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>

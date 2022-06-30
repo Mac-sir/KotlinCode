@@ -3,12 +3,10 @@ package com.example.kotlincode.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
+import android.os.*
 import android.view.View
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import androidx.viewbinding.ViewBinding
 import com.example.kotlincode.activity.main.MainActivity
 import com.example.kotlincode.databinding.ActivitySplashBinding
@@ -34,6 +32,7 @@ class SplashActivity : BaseActivity() {
         handler.sendEmptyMessageDelayed(1, 3000)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onStart() {
         super.onStart()
         val window = this.window

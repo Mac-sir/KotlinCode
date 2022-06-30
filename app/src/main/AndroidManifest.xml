@@ -20,8 +20,8 @@
 
         <activity
             android:name=".activity.SplashActivity"
-            android:theme="@style/KotlinSplash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/KotlinSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,11 +31,17 @@
         </activity>
 
         <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.main.ProjectActivity" />
+        <activity android:name=".activity.main.SystemActivity" />
+        <activity android:name=".activity.main.SquareActivity" />
+
+        <activity android:name=".activity.main.NormalActivity"
+            android:launchMode="singleTop"/>
 
         <activity
             android:name=".activity.PreviewActivity"
-            android:launchMode="singleTop"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

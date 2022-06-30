@@ -18,11 +18,62 @@ interface RetrofitService {
     ): Call<BaseBean<BaseData>>
 
     /**
+     * 广场数据
+     * http://www.wanandroid.com/article/list/0/json
+     * @param page page
+     */
+    @GET("/user_article/list/{page}/json")
+    fun getSquareList(
+        @Path("page") page: Int
+    ): Call<BaseBean<BaseData>>
+
+
+    /**
+     *
+     * 公众号
+     * https://wanandroid.com/wxarticle/chapters/json
+     */
+    @GET("/wxarticle//chapters/json")
+    fun getChaptersList(): Call<BaseBean<List<TreeListData>>>
+
+    /**
+     *
+     * 公众号
+     * https://wanandroid.com/wxarticle/list/408/1/json
+     */
+    @GET("/wxarticle/list/{id}/{page}/json")
+    fun getChaptersContentList(
+        @Path("id") id: Int,
+        @Path("page") page: Int
+    ): Call<BaseBean<BaseData>>
+
+    /**
+     *
+     * 项目
+     * https://www.wanandroid.com/project/tree/json
+     */
+    @GET("/project/tree/json")
+    fun getProjectList(): Call<BaseBean<List<TreeListData>>>
+
+    /**
+     * 项目的文章
+     * https://www.wanandroid.com/project/list/1/json?cid=294
+     * @param page page
+     * @param cid cid
+     */
+    @GET("/project/list/{page}/json")
+    fun getProjectContentList(
+        @Path("page") page: Int,
+        @Query("cid") cid: Int
+    ): Call<BaseBean<BaseData>>
+
+
+    /**
      * 知识体系
      * http://www.wanandroid.com/tree/json
      */
     @GET("/tree/json")
-    fun getTypeTreeList(): Call<BaseBean<TreeListData>>
+    fun getTypeTreeList(): Call<BaseBean<List<TreeListData>>>
 
     /**
      * 知识体系下的文章
@@ -34,21 +85,30 @@ interface RetrofitService {
     fun getArticleList(
         @Path("page") page: Int,
         @Query("cid") cid: Int
-    ): Call<BaseBean<ArticleListData>>
+    ): Call<BaseBean<BaseData>>
+
+
+    /**
+     * 导航
+     * https://www.wanandroid.com/navi/json
+     * */
+    fun getNaviList(): Call<BaseBean<List<NaviData>>>
+
+
 
     /**
      * 常用网站
      * http://www.wanandroid.com/friend/json
      */
     @GET("/friend/json")
-    fun getFriendList(): Call<BaseBean<FriendListData>>
+    fun getFriendList(): Call<BaseBean<List<FriendListData>>>
 
     /**
      * 大家都在搜
      * http://www.wanandroid.com/hotkey/json
      */
     @GET("/hotkey/json")
-    fun getHotKeyList(): Call<BaseBean<HotKeyData>>
+    fun getHotKeyList(): Call<BaseBean<List<HotKeyData>>>
 
     /**
      * 搜索
@@ -61,7 +121,7 @@ interface RetrofitService {
     fun getSearchList(
         @Path("page") page: Int,
         @Field("k") k: String
-    ): Call<BaseBean<HomeListData>>
+    ): Call<BaseBean<BaseData>>
 
     /**
      * 登录
@@ -94,12 +154,12 @@ interface RetrofitService {
     /**
      * 获取自己收藏的文章列表
      * @param page page
-     * @return BaseBean<HomeListData>
+     * @return BaseBean<BaseData>
      */
     @GET("/lg/collect/list/{page}/json")
     fun getLikeList(
         @Path("page") page: Int
-    ): Call<BaseBean<HomeListData>>
+    ): Call<BaseBean<BaseData>>
 
     /**
      * 收藏文章
@@ -109,7 +169,7 @@ interface RetrofitService {
     @POST("/lg/collect/{id}/json")
     fun addCollectArticle(
         @Path("id") id: Int
-    ): Call<BaseBean<HomeListData>>
+    ): Call<BaseBean<BaseData>>
 
     /**
      * 收藏站外文章
@@ -124,7 +184,7 @@ interface RetrofitService {
         @Field("title") title: String,
         @Field("author") author: String,
         @Field("link") link: String
-    ): Call<BaseBean<HomeListData>>
+    ): Call<BaseBean<BaseData>>
 
     /**
      * 删除收藏文章
@@ -137,7 +197,7 @@ interface RetrofitService {
     fun removeCollectArticle(
         @Path("id") id: Int,
         @Field("originId") originId: Int = -1
-    ): Call<BaseBean<HomeListData>>
+    ): Call<BaseBean<BaseData>>
 
     /**
      * 首页Banner
@@ -151,5 +211,5 @@ interface RetrofitService {
      * @return BaseBean<FriendListData>
      */
     @GET("/lg/collect/usertools/json")
-    fun getBookmarkList(): Call<BaseBean<FriendListData>>
+    fun getBookmarkList(): Call<BaseBean<List<FriendListData>>>
 }
