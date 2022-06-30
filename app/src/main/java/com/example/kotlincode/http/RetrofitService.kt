@@ -82,7 +82,7 @@ interface RetrofitService {
      * @param cid cid
      */
     @GET("/article/list/{page}/json")
-    fun getArticleList(
+    fun getTreeChildrenList(
         @Path("page") page: Int,
         @Query("cid") cid: Int
     ): Call<BaseBean<BaseData>>

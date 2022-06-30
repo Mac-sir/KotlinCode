@@ -27,8 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8dp"
             app:tabGravity="center"
-            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorColor="?attr/colorPrimary"
             app:tabIndicatorHeight="@dimen/dp_4"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
             app:tabMode="scrollable" />
 
     </com.google.android.material.appbar.AppBarLayout>

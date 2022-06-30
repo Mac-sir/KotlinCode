@@ -9,16 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
-import com.chad.library.adapter.base.listener.OnLoadMoreListener
+import com.example.kotlincode.R
+import com.example.kotlincode.activity.BaseActivity
 import com.example.kotlincode.adpter.SystemAdapter
 import com.example.kotlincode.databinding.FragmentNormalBinding
-import com.example.kotlincode.http.bean.BaseDatas
 import com.example.kotlincode.http.bean.TreeListData
 import com.example.kotlincode.presenter.SystemPresenterImpl
+import com.example.kotlincode.startAction
 import com.example.kotlincode.view.fragment.SystemView
 
 class SystemFragment : Fragment(), SystemView,
-    SwipeRefreshLayout.OnRefreshListener,OnItemClickListener {
+    SwipeRefreshLayout.OnRefreshListener, OnItemClickListener {
     companion object {
         fun newInstance(): SystemFragment {
             return SystemFragment()
@@ -48,12 +49,19 @@ class SystemFragment : Fragment(), SystemView,
             tabSwipeRefresh.setOnRefreshListener(this@SystemFragment)
             tabRecyclerView.adapter = mAdapter
         }
+        mAdapter.run {
+            setOnItemClickListener(this@SystemFragment)
+        }
         mPresenter.getSystemList()
         return binding.root
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-
+        startAction(
+            activity as BaseActivity,
+            getString(R.string.system_name),
+            treeListData[position]
+        )
     }
 
     override fun onRefresh() {

@@ -19,5 +19,5 @@ data class TreeListData(
         var order: Int,
         var visible: Int,
         var children: List<Children>?
-    )
+    ): Serializable
 }

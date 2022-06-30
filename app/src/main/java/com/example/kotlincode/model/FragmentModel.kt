@@ -26,8 +26,19 @@ class FragmentModel {
     ) {
         DataManager.getProjectContentList(id, page, object : BaseCallback<BaseData> {
             override fun success(t: BaseData) {
-                Log.i("TAG",""+t.size)
                 callback.getProjectContentSuccess(t)
+            }
+        })
+    }
+
+    fun getTreeChildren(
+        id: Int,
+        page: Int,
+        callback: FragmentPresenter.OnTreeChildrenListener
+    ) {
+        DataManager.getTreeChildrenList(id, page, object : BaseCallback<BaseData> {
+            override fun success(t: BaseData) {
+                callback.getTreeChildrenSuccess(t)
             }
         })
     }

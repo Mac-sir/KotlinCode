@@ -6,6 +6,7 @@ import com.example.kotlincode.view.fragment.NormalView
 
 class FragmentPresenterImpl(private val view: NormalView) :
     FragmentPresenter.OnChaptersContentListener,
+    FragmentPresenter.OnTreeChildrenListener,
     FragmentPresenter.OnProjectContentListener {
 
     private val fragmentModel = FragmentModel()
@@ -31,6 +32,18 @@ class FragmentPresenterImpl(private val view: NormalView) :
     }
 
     override fun getProjectContentFailed(error: String) {
+        view.getDataFailed(error)
+    }
+
+    override fun getTreeChildren(id: Int, page: Int) {
+        fragmentModel.getTreeChildren(id, page, this)
+    }
+
+    override fun getTreeChildrenSuccess(data: BaseData) {
+        view.getDataSuccess(data)
+    }
+
+    override fun getTreeChildrenFailed(error: String) {
         view.getDataFailed(error)
     }
 }

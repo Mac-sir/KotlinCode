@@ -14,4 +14,10 @@ interface FragmentPresenter {
         fun getProjectContentSuccess(data: BaseData)
         fun getProjectContentFailed(error: String)
     }
+
+    interface OnTreeChildrenListener {
+        fun getTreeChildren(id: Int, page: Int = 0)
+        fun getTreeChildrenSuccess(data: BaseData)
+        fun getTreeChildrenFailed(error: String)
+    }
 }

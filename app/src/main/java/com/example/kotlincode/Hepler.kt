@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.kotlincode.activity.BaseActivity
 import com.example.kotlincode.activity.PreviewActivity
 import com.example.kotlincode.activity.main.NormalActivity
+import com.example.kotlincode.http.bean.TreeListData
 
 /**
  * 扩展函数  Class.mothod(参数：类型)
@@ -42,5 +43,12 @@ fun startPreview(activity: FragmentActivity, uri: String) {
 fun startAction(activity: BaseActivity, title: String) {
     val intent = Intent(activity, NormalActivity::class.java)
     intent.putExtra(Constant.COMMON_TITLE_KEY, title)
+    activity.startActivity(intent)
+}
+
+fun startAction(activity: BaseActivity, title: String, data: TreeListData) {
+    val intent = Intent(activity, NormalActivity::class.java)
+    intent.putExtra(Constant.COMMON_TITLE_KEY, title)
+    intent.putExtra(Constant.COMMON_TREE_KEY, data)
     activity.startActivity(intent)
 }

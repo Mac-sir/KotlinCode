@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/systemItemFirst"
         android:gravity="center_vertical"
-        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_13dp"
         android:text="日期"
         android:textColor="@android:color/secondary_text_light" />
 </RelativeLayout>

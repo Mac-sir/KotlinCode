@@ -78,24 +78,21 @@ class NormalFragment : Fragment(), NormalView,
         when (title) {
             getString(R.string.official_name) -> mPresenter.getChapterContent(id = cid)
             getString(R.string.project_name) -> mPresenter.getProjectContent(id = cid)
+            getString(R.string.system_name) -> mPresenter.getTreeChildren(id = cid)
         }
     }
 
     override fun getDataSuccess(data: BaseData) {
-        Log.i("TAG","数据"+data.size)
+        //请注意重名的引用
         data.datas?.let {
             val all = data.total
             val isRefresh = binding.tabSwipeRefresh.isRefreshing
             mAdapter.run {
-                Log.i("TAG","1进数据"+data.size)
-                Log.i("TAG","2进数据"+data.offset)
-                Log.i("TAG","3进数据"+data.total)
-                Log.i("TAG","4进数据"+data.curPage)
-                if (data.offset >= all || data.size >= all) {
+                if (data.offset >= all || this.data.size >= all) {
+                    loadMoreModule.loadMoreEnd()
                     return
                 }
                 if (isRefresh) {
-                    Log.i("TAG","进数据"+data.size)
                     setList(it)
                 } else {
                     addData(it)
@@ -125,6 +122,7 @@ class NormalFragment : Fragment(), NormalView,
         when (title) {
             getString(R.string.official_name) -> mPresenter.getChapterContent(cid)
             getString(R.string.project_name) -> mPresenter.getProjectContent(cid)
+            getString(R.string.system_name) -> mPresenter.getTreeChildren(id = cid)
         }
     }
 }

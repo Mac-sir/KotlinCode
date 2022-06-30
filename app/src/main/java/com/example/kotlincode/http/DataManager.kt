@@ -101,6 +101,25 @@ object DataManager {
             })
     }
 
+    fun getTreeChildrenList(id: Int, page: Int, callback: BaseCallback<BaseData>) {
+        RequestHelp.retrofitService.getTreeChildrenList(page, id)
+            .enqueue(object : Callback<BaseBean<BaseData>> {
+                override fun onResponse(
+                    call: Call<BaseBean<BaseData>>,
+                    response: Response<BaseBean<BaseData>>
+                ) {
+                    val result = response.body()?.data
+                    if (response.isSuccessful && result != null) {
+                        callback.success(result)
+                    }
+                }
+
+                override fun onFailure(call: Call<BaseBean<BaseData>>, t: Throwable) {
+
+                }
+            })
+    }
+
     fun getNaviList(callback: BaseListCallback<NaviData>) {
         RequestHelp.retrofitService.getNaviList()
             .enqueue(object : Callback<BaseBean<List<NaviData>>> {

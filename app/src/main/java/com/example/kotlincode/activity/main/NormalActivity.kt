@@ -10,6 +10,7 @@ import com.example.kotlincode.adpter.FragmentAdapter
 import com.example.kotlincode.databinding.ActivityNormalBinding
 import com.example.kotlincode.http.bean.TreeListData
 import com.example.kotlincode.presenter.NormalPresenterImpl
+import com.example.kotlincode.toast
 import com.example.kotlincode.view.NormalView
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -29,8 +30,8 @@ class NormalActivity : FragmentActivity(), NormalView {
     }
 
     private var mTitle: String = ""
-    private lateinit var tabLayout: TabLayoutMediator
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNormalBinding.inflate(layoutInflater)
@@ -44,16 +45,29 @@ class NormalActivity : FragmentActivity(), NormalView {
             normalToolbar.setNavigationOnClickListener {
                 onBackPressed()
             }
-            tabLayout = TabLayoutMediator(normalTabs, normalViewPager) { tab, position ->
+            TabLayoutMediator(normalTabs, normalViewPager) { tab, position ->
                 tab.text = names[position].name
-            }
-            tabLayout.attach()
+            }.attach()
             normalAdapter.title = mTitle
         }
         intent.extras?.let {
             when (mTitle) {
                 getString(R.string.official_name) -> normalPresenter.getChaptersList()
                 getString(R.string.project_name) -> normalPresenter.getProjectList()
+                getString(R.string.system_name) -> {
+                    val treeData = it.getSerializable(Constant.COMMON_TREE_KEY) as TreeListData
+                    treeData.children?.let { a->
+                        a.forEach { b->
+                            names.add(TreeListData(0,b.name,
+                                0,0,0,0,null))
+                        }
+                        normalAdapter.list.addAll(a)
+                        normalAdapter.notifyDataSetChanged()
+                    }
+                    treeData.let {
+                        binding.normalToolbar.title = treeData.name
+                    }
+                }
             }
         }
     }
@@ -74,6 +88,6 @@ class NormalActivity : FragmentActivity(), NormalView {
     }
 
     override fun getDataFailed(error: String) {
-
+        toast(error)
     }
 }

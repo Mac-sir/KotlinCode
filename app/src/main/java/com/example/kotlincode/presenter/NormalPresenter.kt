@@ -3,7 +3,6 @@ package com.example.kotlincode.presenter
 import com.example.kotlincode.http.bean.TreeListData
 
 interface NormalPresenter {
-
     interface OnChaptersListener {
         fun getChaptersList()
     }
