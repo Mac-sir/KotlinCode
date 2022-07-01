@@ -23,6 +23,7 @@ import com.example.kotlincode.http.bean.BaseDatas
 import com.example.kotlincode.presenter.MainPresenterImpl
 import com.example.kotlincode.startAction
 import com.example.kotlincode.startPreview
+import com.example.kotlincode.toast
 import com.example.kotlincode.view.MainView
 import com.youth.banner.Banner
 import com.youth.banner.indicator.CircleIndicator
@@ -66,6 +67,7 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
             swipeRefresh.isRefreshing = true
             swipeRefresh.setOnRefreshListener(onRefreshListener)
             recycleView.adapter = commonAdapter
+            toolbar.tvSearch.setOnClickListener(onClickListener)
         }
         mainBinding.run {
             tvSquare.setOnClickListener(onClickListener)
@@ -110,6 +112,9 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
             }
             R.id.tvProject -> {
                 startAction(this@MainActivity,getString(R.string.project_name))
+            }
+            R.id.tvSearch -> {
+                toast(getString(R.string.emo))
             }
         }
     }

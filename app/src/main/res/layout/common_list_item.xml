@@ -72,5 +72,5 @@
         android:layout_alignParentEnd="true"
         android:padding="@dimen/space_5dp"
         android:src="@drawable/ic_action_no_like"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 </RelativeLayout>
