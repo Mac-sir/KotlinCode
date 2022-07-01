@@ -21,7 +21,7 @@ class CommonAdapter(context: Context, datas: MutableList<BaseDatas>) :
                 if (item.collect) R.drawable.ic_action_like else R.drawable.ic_action_no_like
             )
             setTextColor(R.id.mainTypeTv, context.resources.getColor(R.color.purple_500))
+            setIsRecyclable(false)
         }
-
     }
 }

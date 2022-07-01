@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dp_8"
-    android:background="@drawable/item_round_bg"
-    android:padding="@dimen/dp_8">
+    android:padding="@dimen/dp_8"
+    android:background="@drawable/item_round_bg">
 
     <ImageView
         android:id="@+id/mainHeadImg"
@@ -71,6 +71,6 @@
         android:layout_below="@+id/mainTitleTv"
         android:layout_alignParentEnd="true"
         android:padding="@dimen/space_5dp"
-        android:visibility="invisible"
-        android:src="@drawable/ic_action_no_like" />
+        android:src="@drawable/ic_action_no_like"
+        android:visibility="visible" />
 </RelativeLayout>

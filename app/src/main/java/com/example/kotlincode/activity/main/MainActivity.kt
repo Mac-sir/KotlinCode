@@ -3,6 +3,7 @@ package com.example.kotlincode.activity.main
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
@@ -118,9 +119,15 @@ class MainActivity : BaseActivity(), MainView, OnLoadMoreListener {
         Log.i(tag, "onStart")
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         Log.i(tag, "onResume")
+        commonAdapter?.let {
+            if (!it.data.isNullOrEmpty()){
+                it.notifyDataSetChanged()
+            }
+        }
     }
 
     override fun onPause() {

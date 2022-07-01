@@ -13,7 +13,11 @@
 - mvp架构使用起来不熟悉
 - tabLayout + ViewPage2 有数据没效果
 - webView页面有上一页的时候，每次按back就退出活动页面
+  > 解决方法是： 返回键监听拦截并通过WebView.canGoBack()作为判断条件
 - retrofit2 如何做cookie的持久化操作
+  > 创建一个okhttpClient对象并添加addInterceptor拦截
+- BaseQuickAdapter（ 3.0.7 ） OnItemClickListener 点击闪退
+  > 解决方法是： 3.0.7 改为 3.0.6
 - 命名重复要避免
 ```
  override fun getDataSuccess(data: BaseData) {
@@ -39,6 +43,8 @@
 - 修复webView页面返回键问题
 - 修复tabLayout字体大写问题
 - 修复fragment内容页面加载不出来问题
+- 修复主页内容item的bug
+- 完善ViewPage适配器功能
 
  ----------------- 2022.6.29 -----------
 - 搭建MVP架构

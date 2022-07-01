@@ -8,6 +8,7 @@ import com.example.kotlincode.Constant
 import com.example.kotlincode.R
 import com.example.kotlincode.adpter.FragmentAdapter
 import com.example.kotlincode.databinding.ActivityNormalBinding
+import com.example.kotlincode.fragment.NormalFragment
 import com.example.kotlincode.http.bean.TreeListData
 import com.example.kotlincode.presenter.NormalPresenterImpl
 import com.example.kotlincode.toast
@@ -16,7 +17,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class NormalActivity : FragmentActivity(), NormalView {
 
-    private var datas = mutableListOf<TreeListData.Children>()
     private var names = mutableListOf<TreeListData>()
 
     private lateinit var binding: ActivityNormalBinding
@@ -26,7 +26,7 @@ class NormalActivity : FragmentActivity(), NormalView {
     }
 
     private val normalAdapter: FragmentAdapter by lazy {
-        FragmentAdapter(this, datas)
+        FragmentAdapter(this)
     }
 
     private var mTitle: String = ""
@@ -61,8 +61,7 @@ class NormalActivity : FragmentActivity(), NormalView {
                             names.add(TreeListData(0,b.name,
                                 0,0,0,0,null))
                         }
-                        normalAdapter.list.addAll(a)
-                        normalAdapter.notifyDataSetChanged()
+                        normalAdapter.setList(names)
                     }
                     treeData.let {
                         binding.normalToolbar.title = treeData.name
@@ -76,15 +75,7 @@ class NormalActivity : FragmentActivity(), NormalView {
     override fun getDataSuccess(data: List<TreeListData>) {
         names.clear()
         names.addAll(data)
-        names.forEach {
-            normalAdapter.list.add(
-                TreeListData.Children(
-                    it.id, it.name, 0,
-                    0, 0, 0, null
-                )
-            )
-        }
-        normalAdapter.notifyDataSetChanged()
+        normalAdapter.setList(data)
     }
 
     override fun getDataFailed(error: String) {

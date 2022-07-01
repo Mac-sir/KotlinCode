@@ -12,18 +12,18 @@
         </shape>
     </item>
     <item>
-        <shape android:shape="rectangle">
+        <shape>
             <padding
                 android:bottom="0.5dp"
                 android:left="0.5dp"
                 android:right="0.5dp"
-                android:top="0dp" />
+                android:top="0.5dp" />
             <solid android:color="#10CCCCCC" />
             <corners android:radius="@dimen/dp_4" />
         </shape>
     </item>
     <item>
-        <shape android:shape="rectangle">
+        <shape>
             <padding
                 android:bottom="0.5dp"
                 android:left="0.5dp"
@@ -45,7 +45,7 @@
         </shape>
     </item>
     <item>
-        <shape android:shape="rectangle">
+        <shape>
             <padding
                 android:bottom="0.5dp"
                 android:left="0.5dp"
