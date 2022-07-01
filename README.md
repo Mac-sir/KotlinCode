@@ -15,7 +15,7 @@
 - webView页面有上一页的时候，每次按back就退出活动页面
   > 解决方法是： 返回键监听拦截并通过WebView.canGoBack()作为判断条件
 - retrofit2 如何做cookie的持久化操作
-  > 创建一个okhttpClient对象并添加addInterceptor拦截
+  > 解决方法是： 创建一个okhttpClient对象并添加addInterceptor拦截
 - BaseQuickAdapter（ 3.0.7 ） OnItemClickListener 点击闪退
   > 解决方法是： 3.0.7 改为 3.0.6
 - 命名重复要避免
